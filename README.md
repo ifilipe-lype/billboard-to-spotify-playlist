@@ -28,12 +28,12 @@ SPOTIFY_REDIRECTION_URI=http://example.com
 ## Run
 1. On the first run your browse will open up on spotify's authorization page
 2. You will be redirected to another page (example.com) you must copy the entire url and past it into the terminal (it will be prompting you for it)
+3. **DATE on format YYYY-MM-DD, TOP_LIMIT as integer will be prompted if not provided**
 ```bash
-./venv/bin/python main.py [DATE] [TOP_LIMIT]
+./venv/bin/python main.py DATE TOP_LIMIT
 ```
 or
 ```bash
 chmod +x main.py # makes file executable
-./main.py [DATE] [TOP_LIMIT] # runs file directly
+./main.py DATE TOP_LIMIT # runs file directly
 ```
-3. **DATE on format YYYY-MM-DD, TOP_LIMIT as integer will be prompted if not provided**
