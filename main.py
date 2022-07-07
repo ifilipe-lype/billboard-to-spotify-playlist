@@ -1,3 +1,5 @@
+#!venv/bin/python
+
 import os
 import sys
 import spotipy
@@ -13,9 +15,14 @@ load_dotenv()
 
 # Validates date input
 try:
-    date_input_separated = input(
-        "Which year do you want to travel to? Type the date in this format YYYY-MM-DD: "
-    ).split(sep="-")
+
+    date_input = sys.argv [1] if len(sys.argv) > 1 else None
+    if not date_input:
+        date_input = input(
+            "Which year do you want to travel to? Type the date in this format YYYY-MM-DD: "
+        )
+
+    date_input_separated = date_input.split("-")
 
     year, month, day = map(lambda x: int(x), date_input_separated)
 
@@ -26,12 +33,16 @@ except Exception as e:
 
 # Validates top limit input
 try:
-    top = int(input("Type a number for the top limit of songs: "))
+    top = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    
+    if top is None:
+        top = int(input("Type a number for the top limit of songs: "))
+
     if top <= 0 or top > 100:
         raise Exception()
 
 except Exception as e:
-    print("Invalid number! top must be greater than 1 and less than or equal to 100")
+    print("Invalid number! top must be greater than 0 AND less than or equal to 100")
     sys.exit(1)
 
 # Scraping Billboard 100
