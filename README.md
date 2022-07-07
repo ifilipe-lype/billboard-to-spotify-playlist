@@ -1,5 +1,5 @@
 # Billboard to Spotify-playlist
-This script will scrap the billboard website page of trending songs in the specified time
+This script will scrape data on the billboard website page of trending songs in the specified time
 
 ## Set up
 1. clone this repo
